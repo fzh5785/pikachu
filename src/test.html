@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <style>
+        * {box-sizing: border-box;}
+        *::before,*::after {box-sizing: border-box;}
+        #html {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 60vh;
+        }
+        #demo2{
+            display: none;
+        }
+        #demo {
+            border: 1px solid black;
+            height: 40vh;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow: scroll;
+        }
+        #demo::-webkit-scrollbar {
+            display: none;
+        }
+        #buttons {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            right: 0;
+            top: 0;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        #buttons>button {
+            margin-bottom: 10px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+        @media (max-width: 500px) {
+            #html .skin .face {
+                width: 72px;
+                height: 72px;
+                margin-left: -36px;
+            }
+            #html .skin .face.left {
+                transform: translateX(-146px);
+            }
+            #html .skin .face.right {
+                transform: translateX(146px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <style id="demo2"></style>
+    <div id="buttons">
+        <button id="btnPause">暂停</button>
+        <button id="btnPlay">播放</button>
+        <button id="btnSlow">慢速</button>
+        <button id="btnNormal">中速</button>
+        <button id="btnFast">快速</button>
+    </div>
+    <div id="html">
+        <div class="skin">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose">
+                <div class="yuan"></div>
+            </div>
+            <div class="face left">
+            </div>
+            <div class="face right">
+            </div>
+            <div class="mouth">
+                <div class="up">
+                    <div class="lip left">
+                        <div></div>
+                    </div>
+                    <div class="lip right"></div>
+                </div>
+                <div class="down">
+                    <div class="yuan1">
+                        <div class="yuan2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="test.js"></script>
+</body>
+</html>
